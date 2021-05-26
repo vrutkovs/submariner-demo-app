@@ -4,7 +4,7 @@ metadata:
   name: guestbook
   namespace: guestbook
 spec:
-  host: guestbook.apps.cluster1.dev04.red-chesterfield.com
+  host: guestbook.apps.<your-ocp-cluster-name>.<your-ocp-cluster-domain>
   port:
     targetPort: 80
   to:
