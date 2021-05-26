@@ -1,9 +1,7 @@
 # ACM Demo APP
 
 When you deploy this application on your OCP, you need to replace the `host` of `route` in the `guestbook/route.yaml` with your
-own cluster name and your own ocp domain, e.g.
-
-Replace
+own cluster name and your own OCP domain.
 
 ```yaml
 apiVersion: route.openshift.io/v1
@@ -21,23 +19,9 @@ spec:
     weight: 100
 ```
 
-to
+Replace `<your-ocp-cluster-name>` to your own cluster name
+Replace `<your-ocp-cluster-domain>` to your own OCP cluster domain
 
-```yaml
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: guestbook
-  namespace: guestbook
-spec:
-  host: guestbook.apps.cluster1.dev04.red-chesterfield.com
-  port:
-    targetPort: 80
-  to:
-    kind: Service
-    name: frontend
-    weight: 100
-```
 
 ## Troubleshooting
 
