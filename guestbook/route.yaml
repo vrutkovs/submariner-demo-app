@@ -9,5 +9,5 @@ spec:
     targetPort: 80
   to:
     kind: Service
-    name: frontend
+    name: guestbook
     weight: 100
