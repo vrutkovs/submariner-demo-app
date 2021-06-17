@@ -15,7 +15,7 @@ spec:
     targetPort: 80
   to:
     kind: Service
-    name: frontend
+    name: guestbook
     weight: 100
 ```
 
@@ -25,7 +25,7 @@ Replace `<your-ocp-cluster-domain>` to your own OCP cluster domain
 
 ## Troubleshooting
 
-When you deploy the `frontend` on ocp, you may get the following errors
+When you deploy this demo on ocp, you may get the following errors
 ```
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name ...
 (13)Permission denied: AH00072: make_sock: could not bind to address [::]:80
@@ -34,14 +34,14 @@ no listening sockets available, shutting down
 AH00015: Unable to open logs
 ```
 
-you need apply a `scc` for the `fronted` by running the following command, e.g.
+you need apply a `scc` for this demo by running the following command, e.g.
 
 ```yaml
 cat << EOF | oc apply -f -
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
-  name: guestbook-frontend-scc
+  name: guestbook-demo-scc
 allowHostDirVolumePlugin: true
 allowHostIPC: true
 allowHostNetwork: true
