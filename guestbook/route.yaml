@@ -2,7 +2,6 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: guestbook
-  namespace: guestbook
 spec:
   host: guestbook.apps.<your-ocp-cluster-name>.<your-ocp-cluster-domain>
   port:
