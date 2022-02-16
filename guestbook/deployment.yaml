@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook
-  namespace: guestbook
 spec:
   selector:
     matchLabels:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: quay.io/skeeey/gb-frontend:v5
+        image: gcr.io/google_samples/gb-frontend:v5
         resources:
           requests:
             cpu: 100m
